@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors"); // Adicione esta linha
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
@@ -7,6 +8,7 @@ const { exec } = require("child_process");
 const app = express();
 const PORT = 3000;
 
+app.use(cors()); // Adicione esta linha para permitir todas as origens
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -104,7 +106,7 @@ app.post("/send-good-night", (req, res) => {
     botProcess.kill("SIGTERM"); // Parar o bot atual para iniciar o de boa noite
   }
 
-  // Iniciar o bot no modo 'boa noite'
+  // Iniciar o bot no modo \'boa noite\'
   const cmd = `node bot.js --channel=${channel} --goodNight=yes --useProxies=${
     proxies && proxies.length > 0 ? "yes" : "no"
   }`;
@@ -122,7 +124,5 @@ app.post("/send-good-night", (req, res) => {
 });
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}` );
 });
-
-

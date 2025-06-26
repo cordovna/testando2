@@ -16,5 +16,13 @@
     "multer": "^2.0.1",
     "tmi.js": "^1.8.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cordovna/testando2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cordovna/testando2/issues"
+  },
+  "homepage": "https://github.com/cordovna/testando2#readme",
   "description": ""
 }
